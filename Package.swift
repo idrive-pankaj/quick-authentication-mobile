@@ -4,6 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "MicrosoftQuickAuth",
+    defaultLocalization: "en",  // Add this line
     platforms: [
         .iOS(.v11) // Set this to your minimum supported version
     ],
@@ -16,7 +17,10 @@ let package = Package(
     targets: [
         .target(
             name: "MicrosoftQuickAuth",
-            path: "iOS/MSQASignIn" // Adjust path to source folder
+            path: "iOS/MSQASignIn", // Adjust path to source folder
+            resources: [
+                .process("Resources")  // Add this if you have a Resources folder
+            ]
         ),
         // Optionally, include test targets if you have any
         // .testTarget(
